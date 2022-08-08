@@ -1,0 +1,98 @@
+.add-user-admin-wrapper {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ban-user-admin-wrapper {
+  margin: 20px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-user-admin-item {
+  font-size: 22px;
+  margin-left: 5px;
+}
+
+.ban-user-admin-item {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.add-user-admin-checkbox {
+  width: 15px;
+  height: 15px;
+}
+
+.ban-user-list {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-user-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ban-user-admin-item {
+  display: flex;
+  margin: 10px 0px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ban-user-admin-name {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.ban-user-admin-btn-wrapper {
+  display: flex;
+  padding-right: 30px;
+}
+
+.ban-user-admin-btn {
+  width: 70px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #003686;
+  color: white;
+  border: 0;
+}
+
+.unban-user-admin-btn {
+  width: 70px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #171b20;
+  color: white;
+  border: 0;
+}
+
+.ban-user-name {
+  display: flex;
+  margin: 0px;
+}
+
+.ban-user-lastName {
+  display: flex;
+  padding-left: 5px;
+  margin: 0px;
+}
+
+.ban-header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

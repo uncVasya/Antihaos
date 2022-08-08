@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper {
+  min-height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: auto;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  flex: 1 1 auto;
+}
+
+
+.footer {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}

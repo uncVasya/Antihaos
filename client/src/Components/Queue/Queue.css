@@ -1,0 +1,174 @@
+ul {
+  margin: 0px 0px 0px 0px;
+  
+}
+
+.menu-wrapper {
+  margin-top: 15px;
+}
+
+.change-game-type-btn {
+  width: 80px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #171b20;
+  color: white;
+  border: 0;
+}
+
+.change-game-type-btn:hover {
+  background-color: #31353b;
+}
+
+.queue-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-btn {
+  width: 120px;
+  height: 30px;
+  margin: 5px 0px;
+  font-size: 12px;
+  background-color: #003686;
+  color: white;
+  border: 0;
+}
+
+.me-btn {
+  width: 120px;
+  height: 30px;
+  margin: 5px 0px;
+  font-size: 12px;
+  background-color: #171b20;
+  color: white;
+  border: 0;
+}
+
+.empty-btn {
+  width: 120px;
+  height: 30px;
+  margin: 5px 0px;
+  font-size: 12px;
+  background-color: white;
+  color: #003686;
+  border: 1px solid #003686;
+}
+
+.stay-to-queue-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.stay-to-queue-btn {
+  background-color: #171b20;
+  width: 160px;
+  height: 50px;
+  margin: 15px 10px;
+  font-size: 12px;
+  color: white;
+  border: 0;
+}
+
+.stay-to-queue-btn:hover {
+  background-color: #31353b;
+}
+
+.tennis-table-img{
+  width: 320px;
+  height: 210px;
+  z-index: -1;
+  position: absolute;
+}
+
+.gamer {
+  display: flex;
+  width: 150px;
+  height: 88px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.gamers-wrapper {
+  display: flex;
+  margin: 20px;
+}
+
+.centered {
+  display:flex;
+  justify-content: center;
+}
+
+.winner-btn {
+  background-color: #171b20;
+  width: 130px;
+  height: 50px;
+  margin: 8px 10px;
+  font-size: 12px;
+  color: white;
+  border: 0;
+}
+
+.dis-winner-btn {
+  background-color: #8e8686;
+  width: 130px;
+  height: 50px;
+  margin: 8px 10px;
+  font-size: 12px;
+  color: white;
+  border: 0;
+}
+
+.winner-btn:hover {
+  background-color: #31353b;
+}
+
+.kick-btn {
+  background-color: #d34547;
+  width: 130px;
+  height: 50px;
+  margin: 8px 10px;
+  font-size: 12px;
+  color: white;
+  border: 0;
+}
+
+.dis-kick-btn {
+  background-color: #8e8686;
+  width: 130px;
+  height: 50px;
+  margin: 8px 10px;
+  font-size: 12px;
+  color: white;
+  border: 0;
+}
+
+.change-mode-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.winner-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.kick-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.queue-users-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.left-user {
+  margin-right: 10px;
+}
+
+.right-user {
+  margin-left: 10px;
+}

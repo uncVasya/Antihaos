@@ -1,0 +1,12 @@
+.change-ranking-btn {
+  width: 80px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #171b20;
+  color: white;
+  border: 0;
+}
+
+.change-ranking-btn:hover {
+  background-color: #31353b;
+}

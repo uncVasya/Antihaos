@@ -1,0 +1,22 @@
+.buttony {
+  display: flex;
+  width: 220px;
+  /* justify-content: space-between; */
+  flex-direction: column;
+}
+
+.rega {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+.buttt {
+  background-color: aqua;
+  width: 110px;
+  color: black;
+}
+
+.lign {
+  text-decoration: none;
+}
