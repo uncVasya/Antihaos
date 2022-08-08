@@ -66,52 +66,36 @@ app.use('/queue', queueRouter);
 app.use('/tournaments', tournamentsRouter);
 app.use('/admin', adminRouter);
 
-// Если HTTP-запрос дошёл до этой строчки, значит ни один из ранее встречаемых рутов не ответил на запрос. Это значит, что искомого раздела просто нет на сайте. Для таких ситуаций используется код ошибки 404. Создаём небольшое middleware, которое генерирует соответствующую ошибку.
 app.use((req, res, next) => {
   const error = createError(404, 'Запрашиваемой страницы не существует на сервере.');
   next(error);
 });
 
-// Отлавливаем HTTP-запрос с ошибкой и отправляем на него ответ.
 app.use((err, req, res, next) => {
-// Получаем текущий ражим работы приложения.
   const appMode = req.app.get('env');
-  // Создаём объект, в котором будет храниться ошибка.
   let error;
 
-  // Если мы находимся в режиме разработки, то отправим в ответе настоящую ошибку. В противно случае отправим пустой объект.
   if (appMode === 'development') {
     error = err;
   } else {
     error = {};
   }
 
-  // Записываем информацию об ошибке и сам объект ошибки в специальные переменные, доступные на сервере глобально, но только в рамках одного HTTP-запроса.
   res.locals.message = err.message;
   res.locals.error = error;
 
-  // Задаём в будущем ответе статус ошибки. Берём его из объекта ошибки, если он там есть. В противно случае записываем универсальный стату ошибки на сервере - 500.
   res.sendStatus(err.status || 500);
-  // Формируем HTML-текст из шаблона "error.hbs" и отправляем его на клиент в качестве ответа.
   res.render('error');
 });
-//  все app - проходят через server  http
 const server = http.createServer(app);
-// clientTracking: false - данные о подключении собираются в Map
-// noServer: true  - запускаем на одном порту серв. раб. на http и wss
 const wss = new WebSocketServer({ clientTracking: false, noServer: true });
-// Part1
 let mapQueue = [];
 
 server.on('upgrade', (req, socket, head) => {
   console.log('Зпауск WS...');
 
-  //  провервка наличия сессии, если нужно рассылать всем за закоментить sessionParser
   sessionParser(req, {}, () => {
-    // console.log('Проверка на наличие сессии, в случае ее отсутствия убивается сокет');
-    // console.log('--->>> значение пришедей сессии', req.session.user);
     if (!req.session.user) {
-      // if (req.session.user.id) { mapQueue.splice(mapQueue.indexOf(req.session.user.id), 1); }
       socket.write('HTTP/1.1 401 Unauthorized\r\n\r\n');
       socket.destroy();
       console.log('Сокет убит!');
@@ -119,13 +103,11 @@ server.on('upgrade', (req, socket, head) => {
     }
 
     wss.handleUpgrade(req, socket, head, (ws) => {
-      // console.log('Апгрейд соединения http+ws в текущей сессии - ws - ОЧЕНЬ БОЛЬШОЙ ОБЪЕКТ');
       wss.emit('connection', ws, req);
     });
   });
 });
 
-// Part2
 wss.on('connection', (ws, req) => {
   const id = req.session.user?.id || uuidv4();
 
@@ -134,11 +116,9 @@ wss.on('connection', (ws, req) => {
   const findeUserId = mapQueue.map((el) => el.userId);
   console.log('------>', findeUserId);
   if (true) mapQueue.push(ws);
-  // if (!findeUserId.includes(ws.userId)) mapQueue.push(ws);
   console.log('Колличество залогиненных пользователей = ', mapQueue.length);
 
   ws.on('message', async (message) => {
-    console.log('message----------123->>>', JSON.parse(message));
     const { type, params } = JSON.parse(message);
     switch (type) {
       case START:
@@ -181,13 +161,9 @@ wss.on('connection', (ws, req) => {
   });
 
   ws.on('close', () => {
-    console.log('map.delete(id)-------id= ', id);
-    console.log('mapQueue.length-------id= ', mapQueue.length);
     mapQueue = mapQueue.filter((el) => (el !== ws));
   });
 });
 
 server.listen(PORT, () => {
-  console.log('000--------------------');
-  console.log(`server started PORT: ${PORT}`);
 });
