@@ -15,6 +15,7 @@
 + разделение ролей участников (3 роли юзеров).
 
 Используемый стэк.
+
 BACK-END: NODE.JS, EXPRESS, SESSIONS, WEBSOCKET.
 БАЗЫ ДАННЫХ: POSTGRESQL, SEQUELIZE ORM
 FRONT-END: JAVASCRIPT, REACT, REDUX, BCRYPT,
