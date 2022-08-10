@@ -20,6 +20,7 @@ BACK-END: NODE.JS, EXPRESS, SESSIONS, WEBSOCKET.
 FRONT-END: JAVASCRIPT, REACT, REDUX, BCRYPT,
 WEBSOCKET, CSS3, HTML, BOOTSTRAP, REST API.
 GIT, GITHUB.
+
 ![Снимок экрана от 2022-08-09 00-08-32](https://user-images.githubusercontent.com/101925640/183520012-2d213735-446b-4b9c-b417-78592e5f7efc.png)
 ![Снимок экрана от 2022-08-09 00-47-53](https://user-images.githubusercontent.com/101925640/183520636-481182ce-6383-4bc7-91ea-1002bfdf2095.png)
 ![Снимок экрана от 2022-08-09 00-55-38](https://user-images.githubusercontent.com/101925640/183521469-cd867827-6b2a-42a1-a5a3-50600edb731c.png)
