@@ -1,4 +1,4 @@
-# Antihaos
+### Antihaos
 А prototype of a queue on the example of a ping-pong game.
 
 Суть примера заключается в отработке приемов создания одиночной и парной очереди в SPA с использлованием Sessions и Websocket.
